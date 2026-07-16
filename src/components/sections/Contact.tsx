@@ -48,17 +48,17 @@ export function Contact() {
 
           <SocialCard 
             title="Email Address"
-            value="dhruvmochi209@gmail.com"
+            value={process.env.NEXT_PUBLIC_EMAIL_ADDRESS || "contact@email.com"}
             icon={Mail}
-            href="mailto:dhruvmochi209@gmail.com"
+            href={`mailto:${process.env.NEXT_PUBLIC_EMAIL_ADDRESS || "contact@email.com"}`}
             delay={0.2}
           />
           
           <SocialCard 
             title="Phone Number"
-            value="+91 9313984566"
+            value={`+91 ${process.env.NEXT_PUBLIC_PHONE_NUMBER || "0000000000"}`}
             icon={Phone}
-            href="tel:+919313984566"
+            href={`tel:+91${process.env.NEXT_PUBLIC_PHONE_NUMBER || "0000000000"}`}
             delay={0.3}
           />
 
