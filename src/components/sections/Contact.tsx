@@ -2,8 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, FileText, Send } from "lucide-react";
-import { ContactForm } from "@/components/ui/contact-form";
+import { Mail, MapPin, Phone, FileText, Send, User } from "lucide-react";
 import { SocialCard } from "@/components/ui/social-card";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 
@@ -37,69 +36,66 @@ export function Contact() {
           </motion.h2>
         </div>
 
-        {/* Two Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+        {/* Static Contact Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           
-          {/* Left: Contact Form (Spans 3 cols on large screens) */}
-          <div className="lg:col-span-3">
-            <ContactForm />
-          </div>
+          <SocialCard 
+            title="Name"
+            value="Dhruv Mochi"
+            icon={User}
+            delay={0.1}
+          />
 
-          {/* Right: Contact Details & Socials (Spans 2 cols on large screens) */}
-          <div className="lg:col-span-2 flex flex-col gap-4">
-            
-            <SocialCard 
-              title="Email Address"
-              value="hello@dhruvmochi.com"
-              icon={Mail}
-              isCopyable
-              delay={0.2}
-            />
-            
-            <SocialCard 
-              title="Phone Number"
-              value="+91 98765 43210"
-              icon={Phone}
-              isCopyable
-              delay={0.3}
-            />
+          <SocialCard 
+            title="Email Address"
+            value="dhruvmochi209@gmail.com"
+            icon={Mail}
+            href="mailto:dhruvmochi209@gmail.com"
+            delay={0.2}
+          />
+          
+          <SocialCard 
+            title="Phone Number"
+            value="+91 9313984566"
+            icon={Phone}
+            href="tel:+919313984566"
+            delay={0.3}
+          />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4 mt-2">
-              <SocialCard 
-                title="Location"
-                value="Ahmedabad, India"
-                icon={MapPin}
-                delay={0.4}
-              />
-              <SocialCard 
-                title="LinkedIn"
-                value="Connect with me"
-                icon={() => (
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                )}
-                href="https://linkedin.com"
-                delay={0.5}
-              />
-              {/* Github SVG directly wrapped in a component or standard SVG. Using a generic FileText for Resume for now */}
-              <SocialCard 
-                title="Resume"
-                value="Download PDF"
-                icon={FileText}
-                href="/resume.pdf"
-                delay={0.6}
-              />
-              <SocialCard 
-                title="GitHub"
-                value="View Repositories"
-                icon={() => (
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A4.8 4.8 0 0 0 8 18v4"></path></svg>
-                )}
-                href="https://github.com"
-                delay={0.7}
-              />
-            </div>
-
-          </div>
+          <SocialCard 
+            title="Location"
+            value="Ahmedabad, India"
+            icon={MapPin}
+            delay={0.4}
+          />
+          
+          <SocialCard 
+            title="LinkedIn"
+            value="Connect with me"
+            icon={() => (
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            )}
+            href="https://linkedin.com"
+            delay={0.5}
+          />
+          
+          <SocialCard 
+            title="Resume"
+            value="Download PDF"
+            icon={FileText}
+            href="/resume.pdf"
+            delay={0.6}
+          />
+          
+          <SocialCard 
+            title="GitHub"
+            value="View Repositories"
+            icon={() => (
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A4.8 4.8 0 0 0 8 18v4"></path></svg>
+            )}
+            href="https://github.com"
+            delay={0.7}
+          />
 
         </div>
         </div>
