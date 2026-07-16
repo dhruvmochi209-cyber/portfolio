@@ -40,7 +40,7 @@ export function Skills() {
         <IconCloud iconSlugs={[
           "typescript", "javascript", "react", "nextdotjs", "html5", "css3",
           "tailwindcss", "nodedotjs", "express", "mongodb", "mysql", "git",
-          "github", "vercel", "render", "postman", "antdesign", "jwt",
+          "github", "vercel", "render", "postman", "antdesign",
           "jsonwebtokens", "prisma", "redux"
         ]} />
       </div>

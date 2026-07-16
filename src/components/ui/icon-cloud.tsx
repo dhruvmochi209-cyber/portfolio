@@ -57,8 +57,10 @@ type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>;
 export function IconCloud({ iconSlugs }: DynamicCloudProps) {
   const [data, setData] = useState<IconData | null>(null);
   const [theme, setTheme] = useState("light");
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     fetchSimpleIcons({ slugs: iconSlugs }).then(setData);
     
     // Check dark mode
@@ -82,9 +84,13 @@ export function IconCloud({ iconSlugs }: DynamicCloudProps) {
     );
   }, [data, theme]);
 
+  if (!mounted || !data) {
+    return null;
+  }
+
   return (
     // @ts-ignore
-    <Cloud {...cloudProps}>
+    <Cloud {...cloudProps} id="icon-cloud-canvas">
       <>{renderedIcons}</>
     </Cloud>
   );
