@@ -29,11 +29,11 @@ export function Globe({ className }: { className?: string }) {
         { location: [23.0225, 72.5714], size: 0.1 } // Ahmedabad
       ],
       // @ts-ignore: onRender is not defined in the COBEOptions type but is supported by the library
-      onRender: (state) => {
+      onRender: (state: any) => {
         state.phi = phi;
         phi += 0.003;
       },
-    });
+    } as Record<string, any>);
 
     setTimeout(() => {
       if (canvasRef.current) {
