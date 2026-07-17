@@ -2,13 +2,13 @@
 
 import { motion } from "framer-motion";
 import React from "react";
-import { AuroraBackground } from "@/components/ui/aurora-background";
+
 import { Button } from "@/components/ui/button";
 import { Mail, Download } from "lucide-react";
 
 export function Hero() {
   return (
-    <AuroraBackground>
+    <section className="relative w-full min-h-screen flex items-center justify-center pt-24 overflow-hidden">
       <motion.div
         initial={{ opacity: 0.0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -35,9 +35,10 @@ export function Hero() {
 
         <div className="flex flex-col sm:flex-row gap-6 mt-8 w-full sm:w-auto z-50 relative">
           {/* Primary Button */}
-          <Button 
-            size="lg" 
-            className="group relative gap-2 rounded-full w-full sm:w-auto font-semibold text-base px-8 h-14 bg-black dark:bg-white text-white dark:text-black overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgb(255,255,255,0.1)] hover:shadow-[0_8px_30px_rgb(59,130,246,0.3)] hover:-translate-y-1 transition-all duration-300 border-none"
+          <a 
+            href="/resume.pdf"
+            download
+            className="inline-flex items-center justify-center group relative gap-2 rounded-full w-full sm:w-auto font-semibold text-base px-8 h-14 bg-black dark:bg-white text-white dark:text-black overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgb(255,255,255,0.1)] hover:shadow-[0_8px_30px_rgb(59,130,246,0.3)] hover:-translate-y-1 transition-all duration-300 border-none"
           >
             {/* Hover Gradient Background */}
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[length:200%_auto] animate-gradient" />
@@ -46,19 +47,18 @@ export function Hero() {
               <Download className="h-5 w-5" />
               Download Resume
             </span>
-          </Button>
+          </a>
 
           {/* Secondary Button */}
-          <Button 
-            size="lg" 
-            variant="outline" 
-            className="group gap-2 rounded-full w-full sm:w-auto font-semibold text-base px-8 h-14 bg-black/5 dark:bg-white/5 backdrop-blur-md border border-black/10 dark:border-white/10 hover:bg-black/10 dark:hover:bg-white/10 hover:border-black/20 dark:hover:border-white/20 hover:-translate-y-1 shadow-sm transition-all duration-300 text-black dark:text-white"
+          <a 
+            href="#contact"
+            className="inline-flex items-center justify-center group gap-2 rounded-full w-full sm:w-auto font-semibold text-base px-8 h-14 bg-black/5 dark:bg-white/5 backdrop-blur-md border border-black/10 dark:border-white/10 hover:bg-black/10 dark:hover:bg-white/10 hover:border-black/20 dark:hover:border-white/20 hover:-translate-y-1 shadow-sm transition-all duration-300 text-black dark:text-white"
           >
             <Mail className="h-5 w-5 group-hover:text-purple-500 transition-colors" />
             Contact Me
-          </Button>
+          </a>
         </div>
       </motion.div>
-    </AuroraBackground>
+    </section>
   );
 }

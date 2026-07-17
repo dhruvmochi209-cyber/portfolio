@@ -3,16 +3,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, FileText, Send, User } from "lucide-react";
-import { SocialCard } from "@/components/ui/social-card";
-import { AuroraBackground } from "@/components/ui/aurora-background";
+
+import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
+import { Globe } from "@/components/ui/globe";
 
 export function Contact() {
   return (
-    <section id="contact" className="w-full relative overflow-hidden">
-      <AuroraBackground className="h-auto py-24 w-full" showRadialGradient={true}>
-        <div className="max-w-6xl mx-auto px-4 relative z-10">
-          
-          {/* Section Heading */}
+    <section id="contact" className="w-full relative overflow-hidden py-24">
+      <div className="max-w-6xl mx-auto px-4 relative z-10">
+
+        {/* Section Heading */}
         <div className="text-center mb-16 max-w-2xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -25,8 +25,8 @@ export function Contact() {
               Get in Touch
             </span>
           </motion.div>
-          
-          <motion.h2 
+
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
@@ -36,70 +36,91 @@ export function Contact() {
           </motion.h2>
         </div>
 
-        {/* Static Contact Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          
-          <SocialCard 
-            title="Name"
-            value="Dhruv Mochi"
-            icon={User}
-            delay={0.1}
-          />
+        {/* Bento Grid Layout */}
+        <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[10rem]">
 
-          <SocialCard 
-            title="Email Address"
-            value={process.env.NEXT_PUBLIC_EMAIL_ADDRESS || "contact@email.com"}
-            icon={Mail}
-            href={`mailto:${process.env.NEXT_PUBLIC_EMAIL_ADDRESS || "contact@email.com"}`}
-            delay={0.2}
-          />
-          
-          <SocialCard 
-            title="Phone Number"
-            value={`+91 ${process.env.NEXT_PUBLIC_PHONE_NUMBER || "0000000000"}`}
-            icon={Phone}
-            href={`tel:+91${process.env.NEXT_PUBLIC_PHONE_NUMBER || "0000000000"}`}
-            delay={0.3}
-          />
+          {/* Main Contact Action */}
+          <BentoGridItem
+            title="Let's Talk"
+            description="Have a specific project in mind or just want to say hi? I'm always open to discussing new opportunities."
+            titleClassName="text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400"
+            descriptionClassName="text-lg text-neutral-600 dark:text-neutral-300"
+            className="md:col-span-2 md:row-span-2 relative overflow-hidden group bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 border-2 border-blue-200 dark:border-blue-800 shadow-[0_0_30px_rgba(59,130,246,0.15)]"
+            icon={<Send className="w-6 h-6 text-blue-500 mb-2" />}
+          >
+            <div className="absolute inset-0 z-0 opacity-40 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+              <div className="absolute -top-10 -right-10 w-72 h-72 bg-blue-500/20 rounded-full blur-[80px]" />
+              <div className="absolute -bottom-10 -left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-[80px]" />
+            </div>
 
-          <SocialCard 
-            title="Location"
-            value="Ahmedabad, India"
-            icon={MapPin}
-            delay={0.4}
-          />
-          
-          <SocialCard 
-            title="LinkedIn"
-            value="Connect with me"
-            icon={() => (
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-            )}
-            href="https://linkedin.com"
-            delay={0.5}
-          />
-          
-          <SocialCard 
+            <div className="mt-6 relative z-50">
+              <a href="mailto:dhruvmochi209@gmail.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-base hover:scale-105 transition-all duration-300 shadow-lg shadow-blue-500/25">
+                <Mail className="w-5 h-5" />
+                Email Me Directly
+              </a>
+            </div>
+          </BentoGridItem>
+          {/* Contact Details / Globe */}
+          <BentoGridItem
+            title="Contact Details"
+            titleClassName="text-2xl font-bold mb-4"
+            description={
+              <div className="flex flex-col gap-4 mt-6 text-base md:text-lg font-semibold text-neutral-700 dark:text-neutral-300">
+                <div className="flex items-center gap-4 group">
+                  <div className="p-3 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
+                    <User className="w-5 h-5" />
+                  </div>
+                  <span>Dhruv A Mochi</span>
+                </div>
+                <div className="flex items-center gap-4 group relative z-20">
+                  <div className="p-3 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <a href="tel:+919313984566" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    +91 9313984566
+                  </a>
+                </div>
+                <div className="flex items-center gap-4 group relative z-50">
+                  <div className="p-3 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <a href="mailto:dhruvmochi209@gmail.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors truncate">
+                    dhruvmochi209@gmail.com
+                  </a>
+                </div>
+                <div className="flex items-center gap-4 group">
+                  <div className="p-3 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
+                    <MapPin className="w-5 h-5" />
+                  </div>
+                  <span>Ahmedabad, India</span>
+                </div>
+              </div>
+            }
+            className="md:col-span-1 md:row-span-2 relative overflow-hidden"
+          >
+            <div className="absolute inset-0 z-0 top-40 flex items-center justify-center opacity-40 pointer-events-none">
+              <Globe />
+            </div>
+          </BentoGridItem>
+
+
+
+          {/* Resume */}
+          <BentoGridItem
             title="Resume"
-            value="Download PDF"
-            icon={FileText}
-            href="/resume.pdf"
-            delay={0.6}
-          />
-          
-          <SocialCard 
-            title="GitHub"
-            value="View Repositories"
-            icon={() => (
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A4.8 4.8 0 0 0 8 18v4"></path></svg>
-            )}
-            href="https://github.com"
-            delay={0.7}
-          />
+            description="Download my CV"
+            className="md:col-span-3 md:row-span-1 group relative cursor-pointer"
+            icon={<FileText className="w-4 h-4 text-neutral-500" />}
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <a href="/resume.pdf" target="_blank" rel="noreferrer" className="absolute inset-0 z-10" aria-label="Resume" />
+            <div className="absolute right-4 bottom-4 w-10 h-10 rounded-full bg-purple-500/10 flex items-center justify-center group-hover:bg-purple-500 group-hover:text-white text-purple-500 transition-colors">
+              <FileText className="w-4 h-4" />
+            </div>
+          </BentoGridItem>
 
-        </div>
-        </div>
-      </AuroraBackground>
+        </BentoGrid>
+      </div>
     </section>
   );
 }

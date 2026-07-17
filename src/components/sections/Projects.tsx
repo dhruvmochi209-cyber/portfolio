@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { ProjectCard, ProjectType } from "@/components/ui/project-card";
-import { AuroraBackground } from "@/components/ui/aurora-background";
+
 
 const projects: ProjectType[] = [
   {
@@ -65,8 +65,7 @@ const projects: ProjectType[] = [
 
 export function Projects() {
   return (
-    <section id="projects" className="w-full relative overflow-hidden">
-      <AuroraBackground className="h-auto py-24 w-full" showRadialGradient={true}>
+    <section id="projects" className="w-full relative overflow-hidden py-24">
         <div className="max-w-6xl mx-auto flex flex-col items-center justify-center text-center relative z-10 px-4 mb-16">
           
           {/* Top Badge */}
@@ -113,7 +112,6 @@ export function Projects() {
         ))}
       </div>
 
-      </AuroraBackground>
     </section>
   );
 }
