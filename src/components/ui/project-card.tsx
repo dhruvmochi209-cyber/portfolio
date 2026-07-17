@@ -85,10 +85,13 @@ export function ProjectCard({ project, delay = 0, className }: ProjectCardProps)
               href={project.liveUrl}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-black dark:bg-white text-white dark:text-black font-semibold text-sm hover:-translate-y-0.5 transition-transform shadow-[0_0_15px_rgba(0,0,0,0.1)] dark:shadow-[0_0_15px_rgba(255,255,255,0.2)]"
+              className="group relative flex items-center gap-2 px-5 py-2.5 rounded-full bg-black dark:bg-white text-white dark:text-black font-semibold text-sm hover:-translate-y-0.5 transition-all duration-300 shadow-[0_0_15px_rgba(0,0,0,0.1)] dark:shadow-[0_0_15px_rgba(255,255,255,0.2)] hover:shadow-[0_8px_30px_rgb(59,130,246,0.3)] border-none overflow-hidden"
             >
-              <ExternalLink className="w-4 h-4" />
-              Live Demo
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[length:200%_auto] animate-gradient" />
+              <span className="relative flex items-center gap-2 z-10 group-hover:text-white transition-colors duration-300">
+                <ExternalLink className="w-4 h-4" />
+                Live Demo
+              </span>
             </a>
           )}
           {project.githubUrl && (
@@ -96,10 +99,13 @@ export function ProjectCard({ project, delay = 0, className }: ProjectCardProps)
               href={project.githubUrl}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-neutral-100 dark:bg-white/5 text-black dark:text-white font-semibold text-sm border border-neutral-200 dark:border-white/10 hover:-translate-y-0.5 transition-transform"
+              className="group relative flex items-center gap-2 px-5 py-2.5 rounded-full bg-neutral-100 dark:bg-white/5 text-black dark:text-white font-semibold text-sm border border-neutral-200 dark:border-white/10 hover:-translate-y-0.5 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(59,130,246,0.3)] hover:border-transparent overflow-hidden"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A4.8 4.8 0 0 0 8 18v4"></path></svg>
-              Source
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[length:200%_auto] animate-gradient" />
+              <span className="relative flex items-center gap-2 z-10 group-hover:text-white transition-colors duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A4.8 4.8 0 0 0 8 18v4"></path></svg>
+                Source
+              </span>
             </a>
           )}
         </div>

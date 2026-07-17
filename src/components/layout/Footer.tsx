@@ -43,10 +43,13 @@ export function Footer() {
               href="mailto:dhruvmochi209@gmail.com"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 mt-2 rounded-full bg-blue-600 text-white font-bold text-lg hover:bg-blue-700 hover:scale-105 hover:shadow-[0_0_20px_rgba(37,99,235,0.3)] transition-all w-fit"
+              className="group relative inline-flex items-center gap-2 px-8 py-4 mt-2 rounded-full bg-blue-600 text-white font-bold text-lg hover:scale-105 hover:shadow-[0_0_20px_rgba(37,99,235,0.3)] transition-all w-fit overflow-hidden border-none"
             >
-              <Mail className="w-5 h-5" />
-              Say Hello
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[length:200%_auto] animate-gradient" />
+              <span className="relative flex items-center gap-2 z-10 group-hover:text-white transition-colors duration-300">
+                <Mail className="w-5 h-5" />
+                Say Hello
+              </span>
             </a>
           </div>
 

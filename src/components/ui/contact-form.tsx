@@ -126,22 +126,24 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="group relative mt-4 w-full flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-black dark:bg-white text-white dark:text-black font-semibold text-sm hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-70 disabled:hover:translate-y-0 overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+          className="group relative mt-4 w-full flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-black dark:bg-white text-white dark:text-black font-semibold text-sm hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-70 disabled:hover:translate-y-0 overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_8px_30px_rgb(59,130,246,0.3)] border-none"
         >
-          {isSubmitting ? (
-            <>
-              <Loader2 className="w-5 h-5 animate-spin" />
-              Sending...
-            </>
-          ) : (
-            <>
-              <span>Send Message</span>
-              <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </>
-          )}
+          {/* Button Hover Glow / Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[length:200%_auto] animate-gradient" />
           
-          {/* Button Hover Glow */}
-          <div className="absolute inset-0 rounded-xl ring-2 ring-transparent group-hover:ring-blue-500/50 transition-all duration-300" />
+          <span className="relative flex items-center justify-center gap-2 z-10 group-hover:text-white transition-colors duration-300">
+            {isSubmitting ? (
+              <>
+                <Loader2 className="w-5 h-5 animate-spin" />
+                Sending...
+              </>
+            ) : (
+              <>
+                <span>Send Message</span>
+                <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </>
+            )}
+          </span>
         </button>
       </form>
     </motion.div>
