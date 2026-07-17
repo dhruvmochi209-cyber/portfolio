@@ -33,7 +33,7 @@ export function Globe({ className }: { className?: string }) {
         state.phi = phi;
         phi += 0.003;
       },
-    } as Record<string, any>);
+    } as any);
 
     setTimeout(() => {
       if (canvasRef.current) {
