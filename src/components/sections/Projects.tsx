@@ -45,16 +45,18 @@ const projects: ProjectType[] = [
     isFeatured: true
   },
   {
-    title: "The Craft House",
-    description: "A modern e-commerce platform for handmade crafts and artisanal products, featuring secure checkout, user authentication, and inventory management.",
+    title: "TheCraftHouse",
+    description: "A modern luxury frontend web application for a premium handmade shop. The platform features a stunning dark-themed UI with smooth scroll animations, an interactive custom cursor, and elegantly showcases specialized services like hand embroidery, bespoke bridal handwork, and artisanal detailing.",
     features: [
-      "E-commerce Checkout",
-      "Payment Gateway",
-      "Admin Dashboard",
-      "Product Filtering"
+      "Premium Dark Theme UI",
+      "Interactive Custom Cursor",
+      "Smooth Scroll Animations",
+      "Luxury Services Showcase",
+      "Responsive Image Gallery",
+      "Modern Responsive Design"
     ],
     techStack: [
-      "Next.js", "React.js", "Node.js", "MongoDB", "Tailwind CSS"
+      "React.js", "Vite", "Tailwind CSS", "Framer Motion", "Lucide React"
     ],
     githubUrl: "https://github.com/dhruvmochi209-cyber/thecrafthouse",
     liveUrl: "https://the-crafthouse.vercel.app/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnJCKEg1S92iRf5-n-5jjxFfd8vlu54CHsuilio7QhyBPUKlNs7pjgkS4Lwoo_aem_3UWajzFw9ecSabFBwNJNlg",
