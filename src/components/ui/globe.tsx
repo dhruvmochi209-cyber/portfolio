@@ -28,6 +28,7 @@ export function Globe({ className }: { className?: string }) {
       markers: [
         { location: [23.0225, 72.5714], size: 0.1 } // Ahmedabad
       ],
+      // @ts-ignore: onRender is not defined in the COBEOptions type but is supported by the library
       onRender: (state) => {
         state.phi = phi;
         phi += 0.003;
