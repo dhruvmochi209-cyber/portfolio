@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { ProjectCard, ProjectType } from "@/components/ui/project-card";
-
+import { LightBackground } from "@/components/ui/light-background";
 
 const projects: ProjectType[] = [
   {
@@ -67,7 +67,7 @@ const projects: ProjectType[] = [
 
 export function Projects() {
   return (
-    <section id="projects" className="w-full relative overflow-hidden py-24">
+    <LightBackground className="w-full relative overflow-hidden py-24" id="projects">
         <div className="max-w-6xl mx-auto flex flex-col items-center justify-center text-center relative z-10 px-4 mb-16">
           
           {/* Top Badge */}
@@ -75,10 +75,10 @@ export function Projects() {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center justify-center gap-2 mb-8 px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 shadow-[0_0_20px_rgba(59,130,246,0.15)] mx-auto"
+          className="inline-flex items-center justify-center gap-2 mb-8 px-5 py-2.5 rounded-full bg-blue-50 border border-blue-200/60 shadow-sm mx-auto"
         >
-          <Sparkles className="w-5 h-5 text-purple-600 dark:text-purple-400" />
-          <span className="text-sm font-bold tracking-widest uppercase text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
+          <Sparkles className="w-5 h-5 text-purple-600" />
+          <span className="text-sm font-bold tracking-widest uppercase text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
             Selected Work
           </span>
         </motion.div>
@@ -88,7 +88,7 @@ export function Projects() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black dark:text-white mb-6 text-center mx-auto"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-800 mb-6 text-center mx-auto"
         >
           Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">Projects</span>
         </motion.h2>
@@ -97,7 +97,7 @@ export function Projects() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-          className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto"
+          className="text-lg text-slate-600 max-w-2xl mx-auto"
         >
           A selection of my best work in full-stack web development, showcasing complex architecture, beautiful interfaces, and real-world problem solving.
         </motion.p>
@@ -113,7 +113,6 @@ export function Projects() {
           />
         ))}
       </div>
-
-    </section>
+    </LightBackground>
   );
 }
