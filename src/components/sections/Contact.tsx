@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, FileText, Send, User } from "lucide-react";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
@@ -106,7 +106,7 @@ export function Contact() {
           {/* Resume */}
           <BentoGridItem
             title="Resume"
-            description="Download my CV"
+            description="Here you can view my CV"
             className="md:col-span-3 md:row-span-1 group relative cursor-pointer bg-white border border-slate-200"
             icon={<FileText className="w-4 h-4 text-slate-500" />}
             titleClassName="text-slate-800"

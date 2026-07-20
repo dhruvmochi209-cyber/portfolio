@@ -13,9 +13,9 @@ const DotGrid = ({ className }: { className?: string }) => (
   </svg>
 );
 
-export function LightBackground({ children, className = "" }: { children: ReactNode, className?: string }) {
+export function LightBackground({ children, className = "", id }: { children: ReactNode, className?: string, id?: string }) {
   return (
-    <section className={`relative w-full overflow-hidden bg-[#fafbfc] ${className}`}>
+    <section id={id} className={`relative w-full overflow-hidden bg-[#fafbfc] ${className}`}>
       
       {/* 1. Large Soft Gradients */}
       <div className="absolute top-[-15%] left-[-10%] w-[50%] h-[60%] rounded-full bg-blue-400/20 blur-[120px] pointer-events-none z-0" />
