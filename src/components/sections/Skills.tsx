@@ -25,7 +25,7 @@ const toolSkills = [
 ];
 
 const aiSkills = [
-  "Google Gemini", "Claude", "Antigravity AI", "21st.dev"
+  "ChatGPT", "Google Gemini", "Claude", "Antigravity AI", "21st.dev"
 ];
 
 export function Skills() {
